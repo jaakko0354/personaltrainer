@@ -29,7 +29,7 @@ export default function Traininglist(){
         setOpen(false);
     }
     
-    const handleClickOpen = (params) => {
+    const handleClickDelete = (params) => {
         setValue(params)
         setOpen(true);
     }
@@ -45,6 +45,7 @@ export default function Traininglist(){
 
     const deleteTraining = (customerid) => {
         setOpen(false);
+        console.log(value);
         fetch('https://customerrest.herokuapp.com/api/trainings/' + customerid, {method: 'DELETE'})
         .then(response => fetchData())
     }
@@ -54,8 +55,8 @@ export default function Traininglist(){
     {headerName:'Duration',field:"duration",sortable:true, filter:true, floatingFilter:true},
     {headerName:'activity',field:"activity", sortable:true, filter:true, floatingFilter:true},
     {headerName:'Customer',field:"customer", valueGetter: CustomerName,sortable:true, filter:true, floatingFilter:true},
-    {headerName:'', cellRenderer: params => 
-        <Button variant="outlined" onClick={()=> handleClickOpen(params.value)}>
+    {headerName:'', field: 'id', cellRenderer: params => 
+        <Button variant="outlined" onClick={()=> handleClickDelete(params.value)}>
             <DeleteIcon/>
         </Button>
       }

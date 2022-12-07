@@ -13,7 +13,8 @@ export default function CalendarPage() {
     const fetchData = () => {
     fetch('https://customerrest.herokuapp.com/gettrainings')
     .then(res => res.json())
-    .then(data => setEvents(eventLister(data)));
+    .then(data => setEvents(eventLister(data)))
+    .catch(err => console.error(err));
     }
 
     const eventLister = (list) => {
