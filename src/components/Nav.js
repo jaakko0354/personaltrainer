@@ -3,12 +3,14 @@ import { AppBar, Toolbar, Typography,IconButton, Button, Menu,MenuItem} from "@m
 import MenuIcon from '@mui/icons-material/Menu';
 import Customerlist from "./Customerlist";
 import Traininglist from "./Traininglist";
+import CalendarPage from "./Calendarpage";
 
 
 export default function Nav() {
 const [openMenu, setOpenMenu] = React.useState(false);
 const [openCustomerList, setOpenCustomerList] = React.useState(true);
 const [openTrainingList, setOpenTrainingList] = React.useState(false);
+const [openCalendarPage, setOpenCalendarPage] = React.useState(false);
 
 const handleClickMenu = (event) => {
 setOpenMenu(event.currentTarget);
@@ -23,6 +25,9 @@ const handleClickCustomerList = () => {
     if (openTrainingList) {
         setOpenTrainingList(false);
     }
+    if (openCalendarPage) {
+        setOpenCalendarPage(false);
+    }
     setOpenMenu(false);
 }
 
@@ -31,7 +36,20 @@ const handleClickTrainingList = () => {
     if (openCustomerList) {
         setOpenCustomerList(false);
     }
+    if (openCalendarPage) {
+        setOpenCalendarPage(false);
+    }
     setOpenMenu(false);
+}
+const handleClickCalendar = () => {
+    setOpenCalendarPage(!openCalendarPage);
+    if(openCustomerList) {
+        setOpenCustomerList(false)
+    }
+    if(openTrainingList){
+        setOpenTrainingList(false)
+    }
+    setOpenMenu(false)
 }
 
 return (
@@ -58,11 +76,13 @@ return (
                 >
             <MenuItem onClick={handleClickCustomerList}>Customer List</MenuItem>
             <MenuItem onClick={handleClickTrainingList}>Training List</MenuItem>
+            <MenuItem onClick={handleClickCalendar}>Calendar</MenuItem>
             </Menu>
         </Toolbar>
     </AppBar>
     {openCustomerList && <Customerlist />}
     {openTrainingList && <Traininglist />}
+    {openCalendarPage && <CalendarPage />}
 </div>
 );
 }

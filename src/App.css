@@ -44,3 +44,10 @@
   width: 100%;
   justify-content: center;
 }
+
+#calendar {
+  width: 1000px;
+  justify-content: center;
+  margin-top: 20px;
+  margin-left: 18%;
+}

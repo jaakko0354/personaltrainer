@@ -11,6 +11,7 @@ import DialogTitle from '@mui/material/DialogTitle';
 import Editcustomer from './Editcustomer';
 import AddCustomer from './Addcustomer';
 import AddTraining from './Addtraining';
+import CSVexporter from './CSVexport';
 
 export default function Customerlist(){
     const [customers, setCustomers] = useState([]);
@@ -106,6 +107,7 @@ export default function Customerlist(){
                     name={pick.firstname + ' ' + pick.lastname}
                     saveT={saveT}
                 />
+                <CSVexporter customers={customers}/>
             </div>
             <div className="ag-theme-material" style ={{height:'600px', width:'86%', margin:'auto', paddingTop: 10}}>
                 <AgGridReact

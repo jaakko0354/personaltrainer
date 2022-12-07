@@ -33,11 +33,14 @@ export default function Traininglist(){
         setValue(params)
         setOpen(true);
     }
+    const CustomerName = (params) => {
+        if(!params.data.customer){
+            return "";
+        }
+        return params.data.customer.firstname + ' ' + params.data.customer.lastname;
+    }
     const DateFormat = (params) => {
         return daysjs(params.value).format('DD/MM/YYYY HH:mm');
-    }
-    const CustomerName = (params) => {
-        return params.data.customer.firstname + ' ' + params.data.customer.lastname;
     }
 
     const deleteTraining = (customerid) => {

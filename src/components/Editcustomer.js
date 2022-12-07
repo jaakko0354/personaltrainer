@@ -33,7 +33,7 @@ export default function Editcustomer(props){
         props.edit(customer, props.url);
         handleCloseClick();
     }
-    const InputChanged = (e) => {
+    const inputChanged = (e) => {
         setCustomer({...customer, [e.target.name]: e.target.value});
     }
     
@@ -56,7 +56,7 @@ export default function Editcustomer(props){
                 fullWidth
                 name='firstname'
                 value={customer.firstname}
-                onChange={e=>InputChanged(e)}
+                onChange={e=>inputChanged(e)}
                 placeholder="Firstname"
             />
             <TextField
@@ -64,7 +64,7 @@ export default function Editcustomer(props){
                 fullWidth
                 name='lastname'
                 value={customer.lastname}
-                onChange={e=>InputChanged(e)}
+                onChange={e=>inputChanged(e)}
                 placeholder="lastname"
             />
             <TextField
@@ -72,7 +72,7 @@ export default function Editcustomer(props){
                 fullWidth
                 name='streetaddress'
                 value={customer.streetaddress}
-                onChange={e=>InputChanged(e)}
+                onChange={e=>inputChanged(e)}
                 placeholder="Streetaddress"
             />
             <TextField
@@ -80,7 +80,7 @@ export default function Editcustomer(props){
                 fullWidth
                 name='postcode'
                 value={customer.postcode}
-                onChange={e=>InputChanged(e)}
+                onChange={e=>inputChanged(e)}
                 placeholder="Postalcode"
             />
             <TextField
@@ -88,7 +88,7 @@ export default function Editcustomer(props){
                 fullWidth
                 name='city'
                 value={customer.city}
-                onChange={e=>InputChanged(e)}
+                onChange={e=>inputChanged(e)}
                 placeholder="City"
             />
             <TextField
@@ -96,7 +96,7 @@ export default function Editcustomer(props){
                 fullWidth
                 name='email'
                 value={customer.email}
-                onChange={e=>InputChanged(e)}
+                onChange={e=>inputChanged(e)}
                 placeholder="Email"
             />
             <TextField
@@ -104,7 +104,7 @@ export default function Editcustomer(props){
                 fullWidth
                 name='phone'
                 value={customer.phone}
-                onChange={e=>InputChanged(e)}
+                onChange={e=>inputChanged(e)}
                 placeholder="Phonenumber"
             />
             
