@@ -1,11 +1,10 @@
 import logo from './logo.svg';
 import './App.css';
-import Customerlist from './components/customerlist';
-import Traininglist from './components/traininglist';
+import Nav from './components/Nav';
 function App() {
   return (
     <div className="App">
-      <Traininglist/>
+      <Nav/>
     </div>
   );
 }
