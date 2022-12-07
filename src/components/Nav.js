@@ -1,8 +1,8 @@
 import React from "react";
 import { AppBar, Toolbar, Typography,IconButton, Button, Menu,MenuItem} from "@mui/material";
 import MenuIcon from '@mui/icons-material/Menu';
-import Customerlist from "./Customerlist";
-import Traininglist from "./Traininglist";
+import Customerlist from "./customerlist";
+import Traininglist from "./traininglist";
 import CalendarPage from "./Calendarpage";
 import Chart from "./Charts";
 
