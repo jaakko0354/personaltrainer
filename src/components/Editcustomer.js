@@ -6,7 +6,7 @@ import Dialog from '@mui/material/Dialog';
 import DialogActions from '@mui/material/DialogActions';
 import DialogContent from '@mui/material/DialogContent';
 import DialogTitle from '@mui/material/DialogTitle';
-import { colors, IconButton } from '@mui/material';
+import {IconButton } from '@mui/material';
 import CreateIcon from '@mui/icons-material/Create';
 
 export default function Editcustomer(props){
